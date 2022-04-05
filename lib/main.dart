@@ -9,7 +9,7 @@ var BtcEur = "Fetching...";
 var BtcUsd = "Fetching...";
 
 //main async thread
-getBtcEur() async {
+Future<void> main() async {
 
   //httpget json body
   var url = Uri.parse("https://blockchain.info/ticker?_=1649142028463");
@@ -33,12 +33,7 @@ getBtcEur() async {
   //print for debug
   print("Bitcoin: ${BtcEur}");
 
-}
-
-Future<void> main() async {
-
   //run and draw main app
-  getBtcEur();
   runApp(const MyApp());
 
 }
